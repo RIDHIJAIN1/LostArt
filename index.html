@@ -1,53 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>LOST ARTS</title>
-    <link rel="stylesheet"href="style.css">
-</head>
-<body>
-    <section class="sec">
-        <header>
-            <a href="#"><img src="images/logo.jpg"class="logo"></a>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Others</a></li>
-            </ul>
-        </header>
-        <div class="content">
-        <div class="textbox">
-            <h2>Fill your cart<br><span>With Art!!</span></h2>
-            <p>
-                <p1>Our lives and homes deserve to be enchanting and meaningful.</p1><br>
-                Immerse yourself in new limited addition art ,sourced from independent artists.
-            </p>
-            <a href="#">View All Arts</a> 
-        </div>
-    </div>
-        <div class = "imgBox">
-            <img src="images/5.jpg"class="art">
-        </div>
-       
-        <ul class="thumb">
-            <li><img src="images/10.jpg"onclick="imgSlider('images/10.jpg'); changeBgColor('#a4c7fd')"></li>
-            <li><img src="images/7.jpg"onclick="imgSlider('images/7.jpg'); changeBgColor('pink')"></li>
-            <li><img src="images/8.jpg"onclick="imgSlider('images/8.jpg'); changeBgColor('#abf7b1')"></li>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stykesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/e806b9c9b2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
+  <body>
+    <section class="sec">
+      <header class="">
+        <a href="#"><img src="images/logo.jpg" class="logo" /></a>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Others</a></li>
+          <li class="access" onclick="showBox()">Accebility</li>
+          <div class="access-box" style="display: none">
+            <li onclick="zoomIn()">zoom in</li>
+            <li onclick="zoomOut()">zoom out</li>
+            <li onclick="defualtText()">defualt</li>
+            <li onclick="textonly()">text-only</li>
+            <li onclick="contrast()">contrast-view</li>
+          </div>
         </ul>
-   
+      </header>
+      <div class="content">
+        <div class="textbox">
+          <h2>Fill your cart<br /><span>With Art!!</span></h2>
+          <p>
+            <p1>Our lives and homes deserve to be enchanting and meaningful.</p1
+            ><br />
+            Immerse yourself in new limited addition art ,sourced from
+            independent artists.
+          </p>
+          <a href="#">View All Arts</a>
+        </div>
+      </div>
+      <div class="imgBox">
+        <img src="images/5.jpg" class="art" />
+      </div>
+
+      <ul class="thumb">
+        <li>
+          <img
+            src="images/10.jpg"
+            onclick="imgSlider('images/10.jpg'); changeBgColor('#a4c7fd')"
+          />
+        </li>
+        <li>
+          <img
+            src="images/7.jpg"
+            onclick="imgSlider('images/7.jpg'); changeBgColor('pink')"
+          />
+        </li>
+        <li>
+          <img
+            src="images/8.jpg"
+            onclick="imgSlider('images/8.jpg'); changeBgColor('#abf7b1')"
+          />
+        </li>
+      </ul>
     </section>
 
+    
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"
+      integrity="sha512-DUC8yqWf7ez3JD1jszxCWSVB0DMP78eOyBpMa5aJki1bIRARykviOuImIczkxlj1KhVSyS16w2FSQetkD4UU2w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <script type="text/javascript">
-        function imgSlider(anything){
-            document.querySelector('.art').src = anything;
-        }
-        function changeBgColor(color){
-            const sec = document.querySelector('.sec');
-            sec.style.background = color;
-        }
+      function imgSlider(anything) {
+        document.querySelector(".art").src = anything;
+      }
+
+      function changeBgColor(color) {
+        const sec = document.querySelector(".sec");
+        sec.style.background = color;
+      }
     </script>
-</body>
+
+    <script>
+      function showBox() {
+        if (jQuery(".access-box").css("display") === "none")
+          jQuery(".access-box").css("display", "flex");
+        else jQuery(".access-box").css("display", "none");
+      }
+      // function zoomIn(){
+      //     size = jQuery("body").css("font-size");
+      //     size = parseInt(size);
+      //     jQuery("body").css("fontSize", size+1)
+      // }
+
+      let a = 0;
+
+      function zoomIn() {
+        // $('*').css('font-size', '+=1');
+        jQuery("p, a, h1, h2").css("font-size", "+=1");
+        a = a - 1;
+        console.log(a);
+      }
+
+      function zoomOut() {
+        // $('*').css('font-size', '-=1');
+        jQuery("p, a, h1, h2").css("font-size", "-=1");
+        a = a + 1;
+        console.log(a);
+      }
+
+      function defualtText() {
+        jQuery("p, a, h1, h2").css("font-size", "+=" + a);
+        a = 0;
+        console.log(a);
+      }
+
+      function textonly() {
+        jQuery("img").css("display", "none");
+        jQuery(".content , .textbox ,p").css("background", "none");
+      }
+
+      function contrast() {
+        jQuery(".sec").css("background", "black");
+        jQuery("p,h1,h2,a").css("color", "white");
+      }
+    </script>
+
+    <script>
+      var currentIndex = 0;
+      var images = document.querySelectorAll(".carousel img");
+      var prevBtn = document.getElementById("prevBtn");
+      var nextBtn = document.getElementById("nextBtn");
+
+      function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+
+
+      var currentIndex = 0;
+var images = document.querySelectorAll('.carousel img');
+var prevBtn = document.getElementById('prevBtn');
+var nextBtn = document.getElementById('nextBtn');
+
+    async function showImage(index) {
+    document.querySelector(".carousel-animation").style.display = "block";
+        await sleep(2000);
+        document.querySelector(".carousel-animation").style.display = "none";
+  if (index < 0) {
+    index = images.length - 1;
+  } else if (index >= images.length) {
+    index = 0;
+  }
+  
+  images[currentIndex].style.opacity = 0;
+  images[currentIndex].style.zIndex = 0;
+  
+  images[index].style.opacity = 1;
+  images[index].style.zIndex = 1;
+  
+  currentIndex = index;
+}
+
+function prevImage() {
+  showImage(currentIndex - 1);
+}
+
+function nextImage() {
+  showImage(currentIndex + 1);
+}
+
+// Automatic image rotation
+var interval = setInterval(nextImage, 5000);
+
+
+      
+      // Automatic image rotation
+      var interval = setInterval(nextImage, 5000);
+    </script>
+  </body>
 </html>

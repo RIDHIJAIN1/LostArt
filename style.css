@@ -11,7 +11,7 @@
     box-sizing: border-box;
     font-family:  'Passions Conflict', cursive;
     
-    /* font-size: 40px; */
+ 
 }
 
 section
@@ -23,11 +23,8 @@ section
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background-color: rgb(245, 160, 160); */
-    /* background-image: url(https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/articleimages/2022/01/02/file7j1adecodt0ee27zni9-1066181-1641069001.jpg?itok=2oX8kRxA ); */
     transition: 0.5s;
-    /* background-repeat: no-repeat; */
-    background-image: linear-gradient(to right , rgb(243, 175, 163) ,rgb(216, 82, 61));
+    background: linear-gradient(to right , rgb(243, 175, 163) ,rgb(216, 82, 61));
 }
 header{
     position: absolute;
@@ -37,7 +34,7 @@ header{
     padding: 20px 100px;
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
+ 
 
 }
 
@@ -66,13 +63,6 @@ header ul li a {
     text-decoration: none;
     font-size: 55px;
 }
- /* a :hover{
-    
-    background-color: rgb(251, 247, 247);
-    font-weight: 500;
-    font-size: 50px;
-    cursor: pointer;
-} */
 
 .content{
     position: relative;
@@ -96,7 +86,7 @@ font-size: 4em;
 line-height: 1.5em;
 font-weight: 900;
 text-transform: uppercase;
-/* font-family: 'Bangers', cursive; */
+
 font-family: 'Anton', sans-serif;
 margin-top: 50px;
 
@@ -104,7 +94,7 @@ margin-top: 50px;
 
 .content .textbox h2 span{
     font-weight: 1.5em;
-    /* font-family: 'Bangers', cursive; */
+  
     font-family: 'Anton', sans-serif;
     font-size: 1.5em;
 
@@ -119,7 +109,7 @@ margin-top: 50px;
     border-radius: 0px 60px 0px 60px;
     font-weight: 500;
     letter-spacing: 1px;
-    height: 160px;
+    height: 220px;
     margin-bottom: 40px;
     margin-top: 30px;
 }
@@ -135,8 +125,6 @@ margin-top: 50px;
     padding: 8px 20px;
     background: rgb(242, 238, 238);
     border: 2px solid black;
-    /* border-radius: 0px 60px 0px 60px; */
-    /* border-radius: 40px; */
     font-weight: 100;
     letter-spacing: 1px;
     margin-top: 20px;
@@ -204,23 +192,65 @@ margin-top: 50px;
     flex-direction: column;
 }
 
-/* .sci li{
-    list-style: none;
+.accessible{
+    display: none;
 }
 
-.sci li a {
-    display: inline-block;
-    filter: invert(1);
-    margin: 5px 0;
-    transform: scale(0.6);
-   
+
+.blue{
+    height: 600px;
+    width: 100%;
+    background: linear-gradient(to right,#2f87c7 0%,#7fa8c6 100%);
+  
 }
-.sci li a img{
-    display: inline-block;
-    filter: invert(1);
-    margin: 10px 0 0 20px;
-    transform: scale(0.6);
-    max-width: 100px;
-    border-radius: 50%;
-   
-} */
+
+
+element.style {
+    width: 1148px;
+    position: relative;
+    left: -3444px;
+    top: 0px;
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 1000ms linear 0s;
+}
+
+
+element.style {
+    width: 1148px;
+    position: relative;
+    left: -4592px;
+    top: 0px;
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 1000ms linear 0s;
+}
+
+.carousel {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+  }
+  
+  .carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .carousel img.active {
+    opacity: 1;
+  }
+  
+  .controls {
+    margin-top: 10px;
+  }
+  
+  button {
+    font-size: 24px;
+    padding: 5px 10px;
+  }
+  
